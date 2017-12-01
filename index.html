@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TIC-TAC-TOE 5x5</title>
+        <style media="screen">
+            .board {
+                margin: auto;
+                width: 50%;
+                text-align: center;
+            }
+            .board-row {
+                display: flex;
+                width: 500px;
+            }
+            .block {
+                color: #FFFFFF;
+                background-color: #777799;
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>New Game:</h3>
+        Dimensions: <input type="text" id="dim"></input>
+        Line length: <input type="text" id="len"></input>
+        <button type="button" name="button" onclick="handleClick()">new game</button>
+
+        <div class="board" id="board">
+            <div class="board-row">
+
+            </div>
+        </div>
+
+        <script src="game.js"></script>
+        <script type="text/javascript">
+            function handleClick() {
+                var dim = document.getElementById("dim").value;
+                var len = document.getElementById("len").value;
+                dim = dim == "" ? 3 : dim;
+                len = len == "" ? 3 : len;
+                if(len > dim){
+                    len = dim;
+                }
+                init(dim, len);
+            }
+        </script>
+    </body>
+</html>
